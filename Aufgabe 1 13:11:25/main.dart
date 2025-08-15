@@ -14,6 +14,9 @@ void main() {
   String S = "Heute";
   String spa = " ";
 
+  double h = 22;
+  double h = 10;
+
   // print(
   //   [
   //     gdStr,
