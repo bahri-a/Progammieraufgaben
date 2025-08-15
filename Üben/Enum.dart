@@ -14,4 +14,11 @@ void main(List<String> args) {
   ); // Fragezeichen macht den Print Null-sicher.
 
   print(NameDesEnums.values);
+
+  print("\n");
+
+  // Eine Variable vom Enum erstellen
+  NameDesEnums einEnum = NameDesEnums.rejected;
+  print(einEnum);
+  print(einEnum.name);
 }

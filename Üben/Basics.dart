@@ -39,4 +39,7 @@ void main(List<String> args) {
   print(Teilnehmer);
 
   print(Sprachen.runtimeType);
+
+  // Bei List benutzt man in den eckigen Klammern den Index:    print(unsereListe[0]);
+  // Bei Map benutzt man in den eckigen Klammern das Key:       print(unsereMap[1]);
 }
