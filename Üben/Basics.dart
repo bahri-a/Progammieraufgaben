@@ -42,4 +42,17 @@ void main(List<String> args) {
 
   // Bei List benutzt man in den eckigen Klammern den Index:    print(unsereListe[0]);
   // Bei Map benutzt man in den eckigen Klammern das Key:       print(unsereMap[1]);
+
+  int a = 0;
+
+  a++; // post-increment. Der Unterschied spielt erst bei print nur eine Rolle.
+  ++a; // pre-increment. Bei a++ wird der a-Wert zuerst geprintet und danach erst addiert.
+  print(++a);
+
+  //print(10 tilde/ 4); // Printed 2, schneidet die Nachkommastelle ab.
+
+  int b = 5;
+  int k = 2 * b++;
+  //k = 2 * b;
+  print(k);
 }
