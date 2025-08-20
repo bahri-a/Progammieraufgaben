@@ -15,7 +15,6 @@ void main() {
   String spa = " ";
 
   double h = 22;
-  double h = 10;
 
   // print(
   //   [
