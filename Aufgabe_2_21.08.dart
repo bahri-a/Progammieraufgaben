@@ -1,6 +1,6 @@
 void main(List<String> args) {
-  String? sex;
-  int? age;
+  String? sex = 'male';
+  int? age = 32;
   switch (sex) {
     case 'male':
       switch (age) {
