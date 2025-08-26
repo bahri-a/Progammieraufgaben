@@ -9,10 +9,10 @@ void main() {
 
   // Zeiger erstellen für die Liste.
 
-  var it = numbers.iterator;
+  var zeiger = numbers.iterator;
 
-  it.moveNext();
-  it.moveNext();
-  it.moveNext();
-  print(it.current);
+  zeiger.moveNext();
+  zeiger.moveNext();
+  zeiger.moveNext();
+  print(zeiger.current);
 }
