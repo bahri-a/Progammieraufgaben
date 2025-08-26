@@ -1,24 +1,18 @@
-void main() {
-  String word = "ottooo";
+void main(List<String> args) {
+  String word = "anna";
   bool isPalindrom = true;
-  // Hier deine for-Schleife:
+  int buchstabe_hinten = word.length - 1;
 
-  for (int i = 0; i < word.length / 2; i++) {
-    if (word.length % 2 != 0) {
+  for (int i = 0; i <= word.length / 2; i++) {
+    if (word[i] == word[buchstabe_hinten]) {
+      buchstabe_hinten--;
+      isPalindrom = true;
+    } else {
       isPalindrom = false;
       break;
-    } else if (word[i] == word[word.length - 1 - i])
-      isPalindrom == true;
-    else {
-      isPalindrom == false;
     }
   }
-
-  print(isPalindrom);
-
-  // if (isPalindrom) {
-  //   print('$word ist ein Palindrom');
-  // } else {
-  //   print('$word ist kein Palindrom');
-  // }
+  isPalindrom
+      ? print("Das Wort '$word' ist ein Palindrom.")
+      : print("Das Wort '$word' ist KEIN Palindrom.");
 }
