@@ -6,6 +6,6 @@ void reverseInitials(String vor, String nach) {
 
 void main(List<String> args) {
   reverseInitials("Bahri", "Akcora");
-  reverseInitials("Meeresbewohner", "Weißsand");
+  reverseInitials("Peter", "Özsoy");
   reverseInitials("Can", "Müller");
 }
