@@ -1,11 +1,9 @@
 import "dart:io";
-import "dart:math";
 
 Map<int, String> toDoList = {};
 
 // Befehl wird extrahiert als String
 String befehlExtrahieren(String? eingabe) {
-  eingabe = eingabe?.trim(); //Entfernt alle Leerzeichen vorne und hinten.
   List<String>? splittedEingabe = eingabe?.split(" ");
   String befehl = splittedEingabe![0];
   return befehl;
@@ -13,7 +11,6 @@ String befehlExtrahieren(String? eingabe) {
 
 // toDo-Aufgabe wird extrahiert als String
 String aufgabeExtrahieren(String? eingabe) {
-  eingabe = eingabe?.trim(); //Entfernt alle Leerzeichen vorne und hinten.
   List<String>? splittedEingabe = eingabe?.split(" ");
   splittedEingabe?.remove(splittedEingabe[0]);
   String toDo = splittedEingabe!.join(" ").toString();
@@ -34,7 +31,7 @@ void addToList(String eingabe) {
     newKey = max + 1;
   }
 
-  toDoList[newKey] = neueAufgabe;
+  toDoList[newKey] = ("$neueAufgabe [ ]");
   print("\nAufgabe hinzugefügt: $neueAufgabe\n");
 }
 
@@ -52,16 +49,24 @@ void anzeigen(Map<int, String> toDoList) {
 }
 
 // Befehl: Aufgaben als erledigt markieren
-void erledigtMarkieren(int nr) {
-  toDoList[nr] = toDoList[nr]!.replaceFirst("[ ]", "[x]");
-  print("Abgehakt: ${toDoList[nr]}\n");
+void erledigtMarkieren(int? nr) {
+  if (nr == null) {
+    print("Die eingegebene Nummer existiert nicht");
+  } else if (nr != null) {
+    toDoList[nr] = toDoList[nr]!.replaceFirst("[ ]", "[x]");
+    print("Abgehakt: ${toDoList[nr]}\n");
+  }
 }
 
-int doneZahlExtrahieren(String eingabe) {
-  List<String> done = eingabe.split(" ");
-  done.remove("done");
-  int? zahl = int.tryParse(done[0]);
-  return zahl!;
+int? doneZahlExtrahieren(String? eingabe) {
+  if (eingabe != null) {
+    List<String> done = eingabe!.split(" ");
+    done.remove("done");
+    int? zahl = int.tryParse(done[0]);
+    return zahl;
+  } else {
+    return null;
+  }
 }
 
 void delete(String eingabe) {
@@ -75,24 +80,27 @@ void main() {
     "\nHerzlich Willkommen!\n\nMöglichkeiten:\n\nadd 'Aufgabe' \t--> Um eine Aufgabe zu erstellen\nlist \t\t--> Um die To-Do-Liste anzuzeigen\ndone 'Nummer' \t--> Um eine Aufgabe als erledigt zu markieren\nexit \t\t--> Um das Programm zu beenden\n\n",
   );
 
-  while (1 < 5) {
+  String? befehl;
+
+  while (befehl != "exit") {
     stdout.write("Eingabe: ");
     String? eingabe = stdin.readLineSync();
-    String? befehl = befehlExtrahieren(eingabe);
+    eingabe = eingabe?.trim(); // Entfernt alle Leerzeichen vorne und hinten.
+    befehl = befehlExtrahieren(eingabe);
     String? toDo = aufgabeExtrahieren(eingabe);
 
     if (befehl == "add") {
       addToList(eingabe!);
     } else if (befehl == "done") {
-      int nr = doneZahlExtrahieren(eingabe!);
+      int? nr = doneZahlExtrahieren(eingabe);
       erledigtMarkieren(nr);
     } else if (befehl == "list") {
       anzeigen(toDoList);
     } else if (befehl == "delete") {
       delete(toDo);
-    } else if (befehl == "exit") {
-      print("\nTschüss!\n");
-      exit(0);
+    } else if (befehl != "exit") {
+      print("\nKein Befehl erkannt\n");
     }
   }
+  print("\n·············· Tschüss! ··············\n");
 }
