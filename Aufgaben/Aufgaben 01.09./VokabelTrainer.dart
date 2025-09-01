@@ -30,13 +30,13 @@ void prozessVokabelEingabe() {
   do {
     stdout.write("Vokabel: ");
     vokabel = stdin.readLineSync();
-    vokabel == null ? print("Fehler: Ungültige Eingabe. Bitte geben Sie etwas ein.") : ();
+    vokabel == null ? print("Fehler: Ungültige Eingabe. Bitte geben Sie etwas ein.") : vokabel.trim();
   } while (vokabel == null);
 
   do {
     stdout.write("Übersetzung: ");
     uebers = stdin.readLineSync();
-    uebers == null ? print("Fehler: Ungültige Eingabe. Bitte geben Sie etwas ein.") : ();
+    uebers == null ? print("Fehler: Ungültige Eingabe. Bitte geben Sie etwas ein.") : uebers.trim();
   } while (uebers == null);
 
   addVokabel(vokabel, uebers);
@@ -76,6 +76,7 @@ void main() {
     anleitung();
     stdout.write("Eingabe: ");
     String eingabe = stdin.readLineSync() ?? "0";
+    eingabe.trim();
     int zahl = eingabeToInt(eingabe);
     switch (zahl) {
       case 1:
