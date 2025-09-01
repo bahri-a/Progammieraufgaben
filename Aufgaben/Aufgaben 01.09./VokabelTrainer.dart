@@ -84,12 +84,12 @@ void main() {
       case 2:
         print("${greenColor}Ausgewählt: Vokabeln abfragen${resetColor}\n");
         List counter = vokabelnAbfragen();
-        print("Insgesamt abgefragte Vokabeln: ${counter[0] + counter[1]}");
-        print("${greenColor}Richtige Antworten: ${counter[0]}${resetColor}");
-        print("${redColor}Falsche Antworten: ${counter[1]}${resetColor}");
         int win = counter[0];
         int lose = counter[1];
         int gesamt = win + lose;
+        print("Insgesamt abgefragte Vokabeln: ${gesamt}");
+        print("${greenColor}Richtige Antworten: ${win}${resetColor}");
+        print("${redColor}Falsche Antworten: ${lose}${resetColor}");
         win != 0 ? print("${greenColor}Richtig-Quote in %: ${win / gesamt * 100}${resetColor}") : print("${greenColor}Richtig-Quote in %: 0%${resetColor}");
         lose != 0 ? print("${redColor}Falsch-Quote in %: ${lose / gesamt * 100}${resetColor}") : print("${redColor}Falsch-Quote in %: 0%${resetColor}");
       case 3:
