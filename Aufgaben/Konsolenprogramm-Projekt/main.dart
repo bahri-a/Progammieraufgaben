@@ -17,6 +17,27 @@ String aufgabeExtrahieren(String? eingabe) {
   return toDo;
 }
 
+int? doneZahlExtrahieren(String? eingabe) {
+  if (eingabe != null) {
+    List<String> done = eingabe!.split(" ");
+    done.remove("done");
+    int? zahl = int.tryParse(done[0]);
+    return zahl;
+  } else {
+    return null;
+  }
+}
+
+// Befehl: Aufgaben als erledigt markieren
+void erledigtMarkieren(int? nr) {
+  if (nr == null) {
+    print("Die eingegebene Nummer existiert nicht");
+  } else {
+    toDoList[nr] = toDoList[nr]!.replaceFirst("[ ]", "[x]");
+    print("Abgehakt: ${toDoList[nr]}\n");
+  }
+}
+
 // Zur Liste hinzufügen
 void addToList(String eingabe) {
   String neueAufgabe = aufgabeExtrahieren(eingabe);
@@ -46,27 +67,6 @@ void anzeigen(Map<int, String> toDoList) {
     }
   }
   print("\n");
-}
-
-// Befehl: Aufgaben als erledigt markieren
-void erledigtMarkieren(int? nr) {
-  if (nr == null) {
-    print("Die eingegebene Nummer existiert nicht");
-  } else if (nr != null) {
-    toDoList[nr] = toDoList[nr]!.replaceFirst("[ ]", "[x]");
-    print("Abgehakt: ${toDoList[nr]}\n");
-  }
-}
-
-int? doneZahlExtrahieren(String? eingabe) {
-  if (eingabe != null) {
-    List<String> done = eingabe!.split(" ");
-    done.remove("done");
-    int? zahl = int.tryParse(done[0]);
-    return zahl;
-  } else {
-    return null;
-  }
 }
 
 void delete(String eingabe) {
