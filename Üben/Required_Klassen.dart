@@ -12,9 +12,10 @@ class Mensch {
   String? name;
   int? age;
 
-  Mensch({required this.name, required this.age}); // Parameternamen required wegen {} und Werte required wegen keyword required.
+  Mensch({required this.name, this.age}); // Parameternamen required wegen {} aber Wert nur bei name required wegen keyword required.
   // Mensch({this.name, this.age}); // Parameternamen required aufgrund von {}
   // Mensch(this.name, this.age); // Nur Werte required, weil implizit required
   // Mensch({this.name = "Unbekannt", this.age = 0}); // Parametername required und aber insgesamt optional
   // Mensch(this.name, {this.age}); // Parametername nur für age required wegen {}
+  // Mensch(this.name, this.age);
 }

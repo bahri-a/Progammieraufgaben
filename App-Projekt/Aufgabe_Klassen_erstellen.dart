@@ -1,4 +1,6 @@
-void main() {}
+void main() {
+  Faecher deutsch = Faecher("Deutsch", "blau", 2);
+}
 
 class Faecher {
   String fach;
