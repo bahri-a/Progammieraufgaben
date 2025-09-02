@@ -9,6 +9,15 @@ void describePerson({required String name, required int age}) {
 
 // positioned, named, optional [int age = 0]
 
+// positioned
+// (String, int)
+
+// named
+// (String name, int age)
+
+// optional
+// ([String name = ""], [int age = 0])
+
 // Mischform? 
 // Reihenfolge muss zuerst positioned sein dann named dann optional
 // (int age, {required String name, bool isCEO = false}) { .... } 
