@@ -15,8 +15,4 @@ class Rechteck {
   Rechteck(this.x, this.y);
 }
 
-void main(List<String> args) {
-  Rechteck erstesRechteck = Rechteck(2, 4);
-  print(erstesRechteck.flaeche());
-  print(erstesRechteck.umfang());
-}
+void main(List<String> args) {}
