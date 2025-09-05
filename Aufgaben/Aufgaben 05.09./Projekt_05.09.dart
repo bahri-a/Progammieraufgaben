@@ -1,8 +1,8 @@
 abstract class DatabaseRepository {
   void create(String vokabel, String ubersetzung);
   void read(String text);
-  void update(String text);
-  void delete(String text, String text_update);
+  void update(String text, String text_update);
+  void delete(String text);
 }
 
 class MockDatabaseRepository implements DatabaseRepository {
