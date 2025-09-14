@@ -13,7 +13,15 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Column(children: [appAkademie("Hallo App Akademie!")]),
+              ),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -49,6 +57,11 @@ class MainApp extends StatelessWidget {
                 ),
               ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [for (int i = 1; i <= 2; i++) Icon(Icons.face, size: 60, color: Colors.black)],
+            ),
+            Text("Hallo"),
           ],
         ),
       ),
@@ -61,8 +74,8 @@ Widget block(String text, {Color farbe = Colors.blue}) {
   return Container(
     // Äußerer Container
     color: farbe,
-    height: 120,
-    width: 120,
+    height: 100,
+    width: 100,
     alignment: Alignment.center,
     padding: EdgeInsets.only(left: 40, right: 40, top: 20, bottom: 20),
     child: Container(
@@ -77,5 +90,14 @@ Widget block(String text, {Color farbe = Colors.blue}) {
         child: Text(text, style: TextStyle(color: const Color.fromARGB(255, 1, 80, 145), fontSize: 20)),
       ),
     ),
+  );
+}
+
+Widget appAkademie(String text) {
+  return Column(
+    children: [
+      for (int i = 1; i <= 2; i++)
+        Text(text, style: TextStyle(fontSize: 20, color: const Color.fromARGB(255, 8, 96, 168))),
+    ],
   );
 }
