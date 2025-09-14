@@ -1,4 +1,3 @@
-import "dart:io";
 
 void sumMinToMax(int min, int max) {
   for (int i = min; i <= max; i++) {

@@ -1,4 +1,3 @@
-import "dart:io";
 
 int sum(List<int> list) {
   int a = 0;

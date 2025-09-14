@@ -1,4 +1,3 @@
-import "dart:io";
 
 List<String> zeichenketten = ["abc", "123456", "123456789"];
 

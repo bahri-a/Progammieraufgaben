@@ -1,6 +1,4 @@
-import "dart:io";
 
-import "../../Üben/Funktion.dart";
 
 void main(List<String> args) {
   print(umrechnung(10000));

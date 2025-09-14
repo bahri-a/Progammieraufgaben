@@ -19,7 +19,7 @@ String aufgabeExtrahieren(String? eingabe) {
 
 int? doneZahlExtrahieren(String? eingabe) {
   if (eingabe != null) {
-    List<String> done = eingabe!.split(" ");
+    List<String> done = eingabe.split(" ");
     done.remove("done");
     int? zahl = int.tryParse(done[0]);
     return zahl;

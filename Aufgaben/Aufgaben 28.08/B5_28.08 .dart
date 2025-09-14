@@ -1,4 +1,3 @@
-import "dart:io";
 
 int countLetter(String text, String letter) {
   int counter = 0;

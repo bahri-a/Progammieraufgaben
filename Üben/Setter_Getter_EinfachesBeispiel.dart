@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 // Getter ist nur dafür da, zu lesen unter einer Bedingung.
 

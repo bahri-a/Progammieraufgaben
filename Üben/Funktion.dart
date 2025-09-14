@@ -10,6 +10,7 @@ int anzahl = 1;
 int? printSatz() {
   print("$anzahl. Berechnung fertig");
   anzahl++;
+  return null;
 }
 
 void main(List<String> args) {

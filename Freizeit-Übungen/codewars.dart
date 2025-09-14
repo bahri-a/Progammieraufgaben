@@ -1,25 +1,21 @@
-int points(List<String> games) {
-  int x = 0;
-  int y = 0;
-  int score = 0;
-
-  for (int i = 0; i < 9; i++) {
-    print(games[i]);
-    // x = int.tryParse(game[0]);
-    // y = int.tryParse(game[2]);
-
-    // x > y
-    //     ? score += 3
-    //     : x == y
-    //     ? score += 1
-    //     : ();
+Map<String, int> count(String s) {
+  String a = "A";
+  Map<String, int> ergebnis = {};
+  List<String> bs = [];
+  
+  for (int i = 0; i < s.length; i++) {
+    for (int j = 65; j <= 122; j++) {
+      if(s[i] == a) {
+        bs.add(a);
+        
+      }
+        a == int.tryParse(a)! + 1;
+      if(j == 122) {a = "A";}
+    }
   }
-
-  return score;
+  return {};
 }
 
 void main(List<String> args) {
-  List<String> games = ['"3:1", "2:2", "0:1", "5:1"'];
-  points(games);
-  points(['"1:0"']);
+  
 }
