@@ -36,7 +36,7 @@ class MainApp extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Center(child: block("Alo", farbe: Colors.red)),
+                  child: Center(child: block("A", farbe: Colors.red)),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
